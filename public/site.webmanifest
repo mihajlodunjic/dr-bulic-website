@@ -1,0 +1,17 @@
+{
+  "name": "Doktor Bulić — Stomatološka ordinacija",
+  "short_name": "Doktor Bulić",
+  "lang": "sr-Latn",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f8f7",
+  "theme_color": "#144a48",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "525x537",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
