@@ -2,7 +2,7 @@ import { ContactPanel } from '../components/ContactPanel'
 import { ProcedureSteps } from '../components/ProcedureSteps'
 import { SectionLabel } from '../components/SectionLabel'
 import { ServiceIndex } from '../components/ServiceIndex'
-import { services } from '../data/services'
+import { serviceHref, services } from '../data/services'
 import { site } from '../data/site'
 
 export function HomePage() {
@@ -21,18 +21,25 @@ export function HomePage() {
           </div>
         </div>
         <aside className="hero__atlas" aria-label="Indeks stomatoloških usluga">
-          <div className="hero__logo-field">
-            <span className="mono">ATLAS / 01—06</span>
-            <img src="/logo.png" width="525" height="537" alt="Znak Doktor Bulić, slovo B sa zubom" fetchPriority="high" />
+          <div className="hero__atlas-intro">
+            <span className="mono">STOMATOLOŠKI ATLAS / 01—06</span>
+            <h2>Usluge ordinacije</h2>
+            <p>Pregled oblasti u kojima možete zakazati pregled i dobiti informacije o narednim koracima.</p>
           </div>
           <ol>
             {services.map((service) => (
               <li key={service.slug}>
-                <span>{service.number}</span>
-                <a href={`/usluge/${service.slug}/`}>{service.name}</a>
+                <a href={serviceHref(service)}>
+                  <span>{service.number} /</span>
+                  <strong>{service.name}</strong>
+                </a>
               </li>
             ))}
           </ol>
+          <div className="hero__atlas-footer">
+            <a className="text-link" href="/usluge/">Pogledajte sve usluge <span aria-hidden="true">→</span></a>
+            <span className="mono">{site.city.toUpperCase()} / <a href={site.phoneHref}>{site.phoneDisplay}</a></span>
+          </div>
         </aside>
       </section>
 

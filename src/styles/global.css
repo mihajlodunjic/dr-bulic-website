@@ -335,6 +335,7 @@ p {
 
 .hero__main {
   grid-column: 1 / span 7;
+  align-self: center;
   padding-right: clamp(0rem, 3vw, 3rem);
 }
 
@@ -359,38 +360,32 @@ p {
 
 .hero__atlas {
   display: flex;
-  grid-column: 9 / -1;
+  grid-column: 8 / -1;
+  align-self: center;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-left: clamp(1rem, 2vw, 2rem);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem) 0 clamp(1.25rem, 2vw, 1.75rem) clamp(1.25rem, 2.5vw, 2.25rem);
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
   border-left: 1px solid var(--line-strong);
 }
 
-.hero__logo-field {
-  position: relative;
-  display: flex;
-  min-height: 270px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-bottom: 2rem;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: var(--mint-wash);
-}
-
-.hero__logo-field .mono {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1;
+.hero__atlas-intro .mono {
+  display: block;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
   color: var(--brand-deep);
 }
 
-.hero__logo-field img {
-  width: min(72%, 245px);
-  height: auto;
-  border-radius: 24px;
+.hero__atlas-intro h2 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+  letter-spacing: -0.035em;
+}
+
+.hero__atlas-intro p {
+  max-width: 440px;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .hero__atlas ol {
@@ -401,12 +396,29 @@ p {
 }
 
 .hero__atlas li {
-  display: grid;
-  min-height: 47px;
-  align-items: center;
-  grid-template-columns: 2.25rem 1fr;
   border-bottom: 1px solid var(--line);
-  font-size: 0.88rem;
+}
+
+.hero__atlas li a {
+  display: grid;
+  min-height: 55px;
+  align-items: center;
+  grid-template-columns: 3.25rem 1fr auto;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  text-decoration: none;
+  transition: background-color 160ms ease, padding-left 160ms ease;
+}
+
+.hero__atlas li a::after {
+  color: var(--brand-deep);
+  content: '→';
+  font-size: 0.9rem;
+}
+
+.hero__atlas li a:hover {
+  padding-left: 1rem;
+  background: var(--mint-wash);
 }
 
 .hero__atlas li span {
@@ -415,15 +427,31 @@ p {
   font-size: 0.7rem;
 }
 
-.hero__atlas li a {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  text-decoration: none;
+.hero__atlas li strong {
+  font-size: 0.96rem;
+  font-weight: 570;
 }
 
-.hero__atlas li a:hover {
-  text-decoration: underline;
+.hero__atlas-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+}
+
+.hero__atlas-footer .text-link {
+  font-size: 0.82rem;
+}
+
+.hero__atlas-footer > .mono {
+  color: var(--ink-muted);
+  font-size: 0.65rem;
+  text-align: right;
+}
+
+.hero__atlas-footer > .mono a {
+  white-space: nowrap;
 }
 
 .practical-strip {
@@ -1347,15 +1375,11 @@ p {
   }
 
   .hero__main {
-    grid-column: 1 / span 5;
+    grid-column: 1 / span 4;
   }
 
   .hero__atlas {
-    grid-column: 6 / -1;
-  }
-
-  .hero__logo-field {
-    min-height: 230px;
+    grid-column: 5 / -1;
   }
 
   .practical-strip__grid {
@@ -1519,16 +1543,21 @@ p {
 
   .hero__atlas {
     margin-top: 4rem;
-    padding-left: 0;
+    padding: 1.5rem 0 1.25rem;
     border-left: 0;
   }
 
-  .hero__logo-field {
-    min-height: 250px;
+  .hero__atlas-intro .mono {
+    margin-bottom: 2.5rem;
   }
 
-  .hero__logo-field img {
-    width: 190px;
+  .hero__atlas-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero__atlas-footer > .mono {
+    text-align: left;
   }
 
   .practical-strip__grid {
